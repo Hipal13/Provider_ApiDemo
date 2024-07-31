@@ -23,6 +23,7 @@ class _ProviderDemoScreenState extends State<ProviderDemoScreen> {
   Widget build(BuildContext context) {
     final postModel = Provider.of<DataClass>(context);
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Provider Demo",
           style: TextStyle(fontWeight: FontWeight.bold),),

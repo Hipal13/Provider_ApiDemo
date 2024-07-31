@@ -15,15 +15,18 @@ class Favorites extends StatelessWidget {
 
     // fetching the data from the product file where we added the data
     return Scaffold(
-        appBar: AppBar(title: Text('Favorites')),
-        body: GridView.builder(
-            itemCount: products.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 2,
-                mainAxisSpacing: 2,
-                childAspectRatio: 3 / 2),
-            itemBuilder: (context, i) => ImageView(
-                products[i].id, products[i].image, products[i].name)));
+        appBar: AppBar(title: Text('Favorites',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),
+        body: Padding(
+          padding: const EdgeInsets.all(20),
+          child: GridView.builder(
+              itemCount: products.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 1,
+                  mainAxisSpacing: 3,
+                  childAspectRatio:1/ 1),
+              itemBuilder: (context, i) => ImageView(
+                  products[i].id, products[i].image, products[i].name)),
+        ));
   }
 }

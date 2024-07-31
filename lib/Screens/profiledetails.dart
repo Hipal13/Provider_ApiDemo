@@ -21,14 +21,23 @@ class _ProfileDetailedScreenState extends State<ProfileDetailedScreen> {
     ).findById(profileId);
 
     return Scaffold(
-      appBar: AppBar(title: Text(loadedProduct.name)),
+      appBar: AppBar(
+          title: Text(loadedProduct.name,maxLines: 2,style: TextStyle(fontWeight: FontWeight.bold,),)),
       body: Column(
         children: [
-          Image.network(loadedProduct.image),
+          SizedBox(height: 20,),
+          Container(color: Colors.white,
+            height: 400,
+            width: 400,
+            child: Image.network(loadedProduct.image,height: 200,
+            width: 200,),
+          ),
+          SizedBox(height: 20,),
           Text(
             loadedProduct.name,
             style: TextStyle(
               fontWeight: FontWeight.bold,
+              fontSize: 20
             ),
           ),
         ],

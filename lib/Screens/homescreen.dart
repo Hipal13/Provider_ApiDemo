@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     double height() => MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sample API'),
+        title: const Text('Sample API',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold)),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -54,13 +54,13 @@ class _HomeScreenState extends State<HomeScreen> {
               child: SizedBox(
                 height: height() * 0.2,
                 child: ListView.builder(
-                    itemCount: profiles?.take(12).length,
+                    itemCount: profiles.take(12).length,
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return Container(
                         margin: const EdgeInsets.all(8),
-                        child: ImageView(profiles![index].id,
+                        child: ImageView(profiles[index].id,
                             profiles[index].image, profiles[index].name),
                       );
                     }),
@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisSpacing: 10,
                         crossAxisSpacing: 10),
                     itemBuilder: (ctx, i) => ImageViewGrid(
-                        profiles![i].id, profiles[i].image, profiles[i].name)),
+                        profiles[i].id, profiles[i].image, profiles[i].name)),
               ),
             ),
           ],

@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 class ProfileServices {
   Future<List<Profile>> getAll() async {
-    const url = 'https://api.escuelajs.co/api/v1/categories';
+    const url = 'https://fakestoreapi.com/products';
     final uri = Uri.parse(url);
     final response = await http.get(uri);
     if (response.statusCode == 200) {
@@ -13,10 +13,8 @@ class ProfileServices {
       final todos = json.map((e) {
         return Profile(
           id: e['id'],
-          name: e['name'],
+          name: e['title'],
           image: e['image'],
-          creationAt: e['creationAt'],
-          updatedAt: e['updatedAt'],
         );
       }).toList();
       return todos;
